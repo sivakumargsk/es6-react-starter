@@ -1,13 +1,16 @@
 import React from 'react';
+import ItemsLeft from './ItemsLeft.js'
+import VisibilityFilters from './VisibilityFilters.js'
+import ClearCompleted from './ClearCompleted.js'
 
-function countOnlyTrue (num, bool) {
-  return bool? num+=1:num;
- }
-
-const ItemLeft = React.createClass ({
+export default React.createClass ({
   render: function () {
     return (
-      <sapn> {this.props.todos.reduce(countOnlyTrue, 0)}</span>
+      <div>
+      <ItemsLeft todos={this.props.todos} />
+      <VisibilityFilters />
+      <ClearCompleted />
+      </div>
     );
   }
 });
