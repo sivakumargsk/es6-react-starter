@@ -11,12 +11,12 @@ const todos = [
 ];
 
 export default React.createClass({
-    render: function() {
-        return (
-                <div>
-                <NewTodo />
-                <TodoList todos={todos} />
-                </div>
-        );
-    }
+  render: function() {
+    return (
+      <div>
+      <NewTodo />
+      <TodoList todos={todos} />
+      </div>
+    );
+  }
 });
