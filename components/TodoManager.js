@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './TodoList.js';
 import NewTodo from './NewTodo.js';
+import TodoFotter from './TodoFotter.js';
 
 // yasnippets
 
@@ -16,6 +17,7 @@ export default React.createClass({
       <div>
       <NewTodo />
       <TodoList todos={todos} />
+      <TodoFotter todos={todos} />
       </div>
     );
   }
