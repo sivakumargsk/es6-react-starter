@@ -6,8 +6,8 @@ export default React.createClass({
     return (
       <div>
       <span> New Todo </span>
-      <input type='text' />
-      <input type='button' value='Add' />
+      <input id='taskInput' type='text' />
+      <input type='button' value='Add' onClick={this.props.addOnClick} />
       </div>
     );
   }
