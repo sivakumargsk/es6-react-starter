@@ -5,7 +5,7 @@ const TodoRow = React.createClass({
     return (
       <li>
       <span>{this.props.text}</span>
-      <span>{this.props.status ? 'Active' : 'Pending'}</span>
+      <span>{this.props.status ? ' Active' : ' Pending '}</span>
       <input type='button' value='Remove' />
       </li>
     );
