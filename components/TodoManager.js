@@ -10,9 +10,9 @@ var i = 4;
 export default React.createClass({
   getInitialState: function() {
     return {
-      data: [{id: 1, text: 'Buy milk', active: true},
-             {id: 2, text: 'Do laundryyyyy', active: false},
-             {id: 3, text: 'Read a book', active: true}],
+      data: [{id: 1, text: 'Learning Clojure', active: true},
+             {id: 2, text: 'Learning Clojure Script', active: false},
+             {id: 3, text: 'Learning Redux & React', active: true}],
       nextTaskId: 4 };
   },
   addOnClick : function (){
