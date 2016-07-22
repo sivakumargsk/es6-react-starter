@@ -6,11 +6,16 @@ import ClearCompleted from './ClearCompleted.js'
 export default React.createClass ({
   render: function () {
     return (
-      <div>
-      <ItemsLeft todos={this.props.todos} />
-      <VisibilityFilters />
-      <ClearCompleted />
-      </div>
+      <span>
+        <ItemsLeft
+          todos={this.props.todos} />
+        <VisibilityFilters
+          showAll={this.props.showAll}
+          showCompleted={this.props.showCompleted}
+          showActive={this.props.showActive} />
+        <ClearCompleted
+          clearOnclick={this.props.clearCompleted} />
+      </span>
     );
   }
 });
