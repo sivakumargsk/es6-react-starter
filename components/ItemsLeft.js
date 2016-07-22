@@ -1,7 +1,7 @@
 import React from 'react';
 
-function countOnlyTrue (num, bool) {
-  return bool? num+=1:num;
+function countOnlyTrue (num, todo) {
+  return todo.active? num: num+=1;
  }
 
 export default React.createClass ({
