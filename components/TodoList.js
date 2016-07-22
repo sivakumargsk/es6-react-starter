@@ -14,6 +14,24 @@ const TodoRow = React.createClass({
   }
 });
 
+function getVisibleTodos (todos, filterType){
+  switch (filterType) {
+  case 'SHOW_ALL':
+    return todos;
+  case 'SHOW_COMPLETED':
+    return todos.filter(function (i){
+      return i.active; }
+                       );
+  case 'SHOW_ACTIVE':
+    return todos.filter(function (i){
+      return !i.active;
+    }
+    );
+  default:
+    return todos;
+  }
+};
+
 export default React.createClass({
   genTodoRow: function(todo) {
     return (
@@ -25,32 +43,11 @@ export default React.createClass({
         removeTodo ={this.props.removeTodo.bind(null, todo)} />
     );
   },
-
-  getVisibleTodos: function (todos, filter){
-    switch (filter) {
-      case 'SHOW_ALL':
-            return todos;
-      case 'SHOW_COMPLETED':
-            return todos.filter(function (i){
-                return i.active; }
-        );
-      case 'SHOW_ACTIVE':
-            return todos.filter(function (i){
-                return !i.active; }
-       );
-       default:
-            return todos;
-    }
-  },
-  showTodoList: function(todos, filterType) {
-    return this.getVisibleTodos(todos, filterType).map(this.genTodoRow);
-  },
-
   render: function() {
     return (
       <div>
         <h1>Todo List</h1>
-          <ul> {this.showTodoList(this.props.todos, this.props.visibilityType)} </ul>
+          <ul> {getVisibleTodos(this.props.todos, this.props.visibilityType).map(this.genTodoRow)} </ul>
       </div>
     );
   }
